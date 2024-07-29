@@ -1,0 +1,80 @@
+<style>
+	li{
+		list-style-type:none;
+	}
+	button{
+		display:inline-block
+	}
+	*{
+		text-align:center;
+	}
+	#time{
+		margin-left:670px;
+		padding-top:10px;
+		background-color: skyblue;
+		width:180px;
+		height:30px;
+		border-radius:10px;
+	}
+	#add{
+		
+	}
+</style>
+
+<div id="todolist">
+<h1>To-Do-List</h1>
+<h1>
+<input id="result" style="color:Black">
+</h1>
+<button id="add" onclick="updatelist()">Add</button>
+</div>
+<div class="container"> 
+		<h1>Stop Watch</h1> 
+		<div id="time"> 
+			<span class="digit" id="hr"> 
+				00</span> 
+			<span class="txt">Hr</span> 
+			<span class="digit" id="min"> 
+				00</span> 
+			<span class="txt">Min</span> 
+			<span class="digit" id="sec"> 
+				00</span> 
+			<span class="txt">Sec</span> 
+			<span class="digit" id="count"> 
+				00</span> 
+		</div> 
+		<br>
+		<div id="buttons"> 
+			<button class="btn" id="start" style="color:green"> 
+				Start</button> 
+			<button class="btn" id="stop" style="color:red"> 
+				Stop</button> 
+			<button class="btn" id="reset" style="color:blue"> 
+				Reset</button> 
+		</div> 
+	</div> 
+
+	<script src="script.js"></script> 
+</div>
+<div id="listitem">
+</div>
+
+
+<script>
+	var ans=document.getElementById("listitem")
+    function updatelist(){
+        var a=document.getElementById("result")
+        var b=document.createElement("h4")
+			b.textContent=a.value
+		var btn=document.createElement("button")
+			btn.textContent="Delete"
+			btn.setAttribute("onclick","Remove(event)")
+		var itemlist=document.createElement("li")
+			itemlist.append(b)
+			itemlist.append(btn)
+			listitem.append(itemlist)
+    }
+	function Remove(event){
+		event.target.parentElement.remove()	
+	}
+</script>
